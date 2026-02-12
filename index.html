@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>元宵 - 传统美食互动百科</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <canvas id="plumBlossomCanvas"></canvas>
+    
+    <a href="#" class="top-right-logo">
+        <img src="datawhale-logo.png" alt="Datawhale Logo">
+    </a>
+
+    <div class="container">
+        
+        <header class="hero-section">
+            <div class="decorative-border top"></div>
+            <h1 class="main-title">
+                <span class="title-char">元</span>
+                <span class="title-char">宵</span>
+            </h1>
+            <p class="subtitle">元宵佳节 · 阖家团圆</p>
+            <div class="decorative-border bottom"></div>
+        </header>
+        
+        <section class="ns-comparison-section">
+            <h2 class="section-title">
+                <span class="title-decoration">⚔️</span>
+                南北之争
+                <span class="title-decoration">⚔️</span>
+            </h2>
+            <div class="vs-container">
+                <div class="vs-card north">
+                    <div class="vs-tag">北方派</div>
+                    
+                    <div class="vs-icon-box">
+                        <div class="icon-sieve">
+                            <div class="sieve-texture"></div>
+                            <div class="sieve-ball"></div>
+                            <div class="sieve-ball two"></div>
+                        </div>
+                    </div>
+                    
+                    <h3>滚元宵</h3>
+                    <p class="vs-desc">“滚”出来的豪迈</p>
+                    <ul class="vs-features">
+                        <li><strong>工艺：</strong>馅料沾水在糯米粉中滚制</li>
+                        <li><strong>口感：</strong>表皮干燥松软，有嚼劲</li>
+                        <li><strong>馅料：</strong>多为甜口（芝麻、花生）</li>
+                        <li><strong>汤底：</strong>煮后汤浑，米香浓郁</li>
+                    </ul>
+                </div>
+                
+                <div class="vs-center">
+                    <div class="vs-circle">VS</div>
+                </div>
+
+                <div class="vs-card south">
+                    <div class="vs-tag">南方派</div>
+                    
+                    <div class="vs-icon-box">
+                        <div class="icon-spoon">
+                            <div class="spoon-handle"></div>
+                            <div class="spoon-bowl">
+                                <div class="spoon-tangyuan"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <h3>包汤圆</h3>
+                    <p class="vs-desc">“包”出来的细腻</p>
+                    <ul class="vs-features">
+                        <li><strong>工艺：</strong>糯米面团包入馅料搓圆</li>
+                        <li><strong>口感：</strong>表皮光滑软糯，细腻</li>
+                        <li><strong>馅料：</strong>甜咸皆有（肉馅、豆沙）</li>
+                        <li><strong>汤底：</strong>煮后汤清，不混汤</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+<section class="history-section">
+            <h2 class="section-title">
+                <span class="title-decoration">📜</span>
+                历史文脉
+                <span class="title-decoration">📜</span>
+            </h2>
+            <div class="timeline">
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h3>西汉 · 滥觞</h3>
+                        <p><strong>起源传说：</strong>汉文帝为纪念“平吕”之乱，定正月十五为元宵节。司马迁创建《太初历》，将元宵节列为重大节日。此时主要活动为祭祀“太一神”，燃灯敬佛，初具节日雏形。</p>
+                        <span class="time-tag">公元前104年</span>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <h3>隋唐 · 气象</h3>
+                        <p><strong>盛世灯会：</strong>隋炀帝作诗赞“灯树千光照，花焰七枝开”。唐代取消了宵禁，即“金吾不禁夜”，出现“火树银花合”的盛况，百姓彻夜狂欢，万国来朝，规模空前。</p>
+                        <span class="time-tag">公元581-907年</span>
+                    </div>
+                </div>
+                <div class="timeline-item left">
+                    <div class="timeline-content">
+                        <h3>两宋 · 极盛</h3>
+                        <p><strong>雅俗共赏：</strong>灯节由三天延长至五天。灯艺制作达到巅峰，出现了琉璃灯、万眼罗。辛弃疾词中“宝马雕车”、“鱼龙舞”正是描绘宋代灯节不仅热闹，更具人文浪漫气息。</p>
+                        <span class="time-tag">公元960-1279年</span>
+                    </div>
+                </div>
+                <div class="timeline-item right">
+                    <div class="timeline-content">
+                        <h3>明清 · 俗趣</h3>
+                        <p><strong>全民狂欢：</strong>明太祖规定节期长达十天（初八至十七），为历代最长。增加了舞龙、舞狮、踩高跷、扭秧歌等百戏内容，“走百病”、“摸门钉”等民俗活动深入民间，更具烟火气。</p>
+                        <span class="time-tag">公元1368-1911年</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="poetry-section">
+            <h2 class="section-title">
+                <span class="title-decoration">✒️</span>
+                诗词雅韵
+                <span class="title-decoration">✒️</span>
+            </h2>
+            <div class="poetry-grid">
+                
+                <div class="poem-flip-container">
+                    <div class="poem-flip-inner">
+                        <div class="poem-front">
+                            <div class="poem-body vertical-text">
+                                <p>东风夜放花千树</p>
+                                <p>更吹落 星如雨</p>
+                                <p>宝马雕车香满路</p>
+                                <p>凤箫声动 玉壶光转</p>
+                                <p>一夜鱼龙舞</p>
+                            </div>
+                            <div class="poem-footer">
+                                <strong>《青玉案·元夕》</strong>
+                                <span>[宋] 辛弃疾</span>
+                            </div>
+                            <div class="flip-hint">🖱️ 点击翻转赏画</div>
+                        </div>
+                        <div class="poem-back">
+                            <img src="青玉案.png" alt="青玉案意境图">
+                            <div class="back-overlay">
+                                <h3>蓦然回首</h3>
+                                <p>那人却在，灯火阑珊处</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="poem-flip-container">
+                    <div class="poem-flip-inner">
+                        <div class="poem-front">
+                            <div class="poem-body vertical-text">
+                                <p>去年元夜时</p>
+                                <p>花市灯如昼</p>
+                                <p>月上柳梢头</p>
+                                <p>人约黄昏后</p>
+                            </div>
+                            <div class="poem-footer">
+                                <strong>《生查子·元夕》</strong>
+                                <span>[宋] 欧阳修</span>
+                            </div>
+                            <div class="flip-hint">🖱️ 点击翻转赏画</div>
+                        </div>
+                        <div class="poem-back">
+                            <img src="生.png" alt="生查子意境图">
+                            <div class="back-overlay">
+                                <h3>不见去年人</h3>
+                                <p>泪湿春衫袖</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="encyclopedia-section">
+            <h2 class="section-title">
+                <span class="title-decoration">❀</span>
+                元宵百科
+                <span class="title-decoration">❀</span>
+            </h2>
+            
+            <div class="flip-grid">
+                <div class="flip-card-container">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front card-types">
+                            <div class="card-icon-lg">🍡</div>
+                            <h3>元宵种类</h3>
+                            <p>点击翻转查看口味</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>经典口味</h3>
+                            <ul class="detail-list">
+                                <li>
+                                    <span class="dot black"></span>
+                                    <strong>黑芝麻</strong>：经典传统，浓香四溢
+                                </li>
+                                <li>
+                                    <span class="dot peanut"></span>
+                                    <strong>花生</strong>：香甜可口，老少皆宜
+                                </li>
+                                <li>
+                                    <span class="dot red"></span>
+                                    <strong>豆沙</strong>：细腻绵软，甜而不腻
+                                </li>
+                                <li>
+                                    <span class="dot pink"></span>
+                                    <strong>水果</strong>：创新口味，清新怡人
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card-container">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front card-process">
+                            <div class="card-icon-lg">👐</div>
+                            <h3>制作工艺</h3>
+                            <p>点击翻转查看步骤</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>四步成圆</h3>
+                            <div class="process-steps">
+                                <div class="p-step">
+                                    <span class="step-num">1</span>
+                                    <span>和面：糯米温水揉面</span>
+                                </div>
+                                <div class="p-step">
+                                    <span class="step-num">2</span>
+                                    <span>制馅：芝麻研磨拌糖</span>
+                                </div>
+                                <div class="p-step">
+                                    <span class="step-num">3</span>
+                                    <span>包制：入馅搓圆成型</span>
+                                </div>
+                                <div class="p-step">
+                                    <span class="step-num">4</span>
+                                    <span>煮熟：水沸浮起即熟</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="flip-card-container">
+                    <div class="flip-card-inner">
+                        <div class="flip-card-front card-culture">
+                            <div class="card-icon-lg">🏮</div>
+                            <h3>文化寓意</h3>
+                            <p>点击翻转查看含义</p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h3>美好祈愿</h3>
+                            <div class="culture-items">
+                                <div class="c-item">
+                                    <strong>🌕 团圆美满</strong>
+                                    <p>象征家庭和睦，生活幸福</p>
+                                </div>
+                                <div class="c-item">
+                                    <strong>🎊 节日习俗</strong>
+                                    <p>正月十五吃元宵是传统</p>
+                                </div>
+                                <div class="c-item">
+                                    <strong>✨ 圆圆满满</strong>
+                                    <p>寓意新的一年事事顺心</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="game-section">
+            <h2 class="section-title">
+                <span class="title-decoration">❀</span>
+                互动体验
+                <span class="title-decoration">❀</span>
+            </h2>
+            
+            <div class="game-selection-menu" id="gameMenu">
+                <div class="interactive-card" id="cardCustoms">
+                    <div class="card-icon">🏮</div>
+                    <div class="card-content">
+                        <h3>节日习俗</h3>
+                        <p>赏花灯、猜灯谜、舞龙狮... 探索元宵节的传统文化魅力</p>
+                        <span class="play-tag">点击探索</span>
+                    </div>
+                </div>
+
+                <div class="interactive-card" id="cardFortune">
+                    <div class="card-icon">🧧</div>
+                    <div class="card-content">
+                        <h3>元宵求灵签</h3>
+                        <p>摇一摇好运签筒，测测你今年的专属关键词</p>
+                        <span class="play-tag">点击祈福</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="game-container hidden" id="customsArea">
+                <button class="back-menu-btn" id="backToMenu">↩ 返回互动菜单</button>
+                
+                <div class="customs-grid">
+                    <div class="custom-card">
+                        <div class="custom-icon">🏮</div>
+                        <h3>赏花灯</h3>
+                        <p>“东风夜放花千树”，元宵节又称灯节。人们在这一天张灯结彩，燃灯放焰，寓意光明与希望。</p>
+                    </div>
+                    <div class="custom-card">
+                        <div class="custom-icon">📜</div>
+                        <h3>猜灯谜</h3>
+                        <p>将谜语贴在花灯上供人猜射。既能启迪智慧，又增添节日雅兴，是元宵节不可或缺的娱乐活动。</p>
+                    </div>
+                    <div class="custom-card">
+                        <div class="custom-icon">🦁</div>
+                        <h3>舞狮子</h3>
+                        <p>中国优秀的民间艺术。每逢元宵佳节，民间都以狮舞前来助兴，寄托着民众消灾除害、求吉纳福。</p>
+                    </div>
+                    <div class="custom-card">
+                        <div class="custom-icon">🚶‍♀️</div>
+                        <h3>走百病</h3>
+                        <p>元宵夜妇女们相约出游，结伴而行，见桥必过，认为这样能祛病延年，保佑安康。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div id="fortuneModal" class="modal-overlay">
+            <div class="modal-content fortune-card">
+                <button class="close-modal">&times;</button>
+                <div class="fortune-inner">
+                    <div class="fortune-decoration">🎴</div>
+                    <h3 class="fortune-title">元宵运势</h3>
+                    <div class="fortune-result" id="fortuneResult">
+                        <span class="placeholder">准备好了吗？</span>
+                    </div>
+                    <p class="fortune-desc" id="fortuneDesc">点击下方按钮抽取你的新年关键词</p>
+                    <button id="drawBtn" class="draw-action-btn">开启好运</button>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="footer-pattern"></div>
+            <p>传承千年美食文化 · 品味传统节日风情</p>
+            <p style="margin-top: 10px;">
+                <a href="https://baike.baidu.com/item/%E5%85%83%E5%AE%B5/118229" target="_blank" class="wiki-link">
+                    📖 了解更多：百度百科·元宵词条
+                </a>
+            </p>
+            <p class="copyright">© 2026 动态百科 - 元宵词条</p>
+        </footer>
+
+    </div>
+
+    <button id="musicToggle" class="music-toggle" title="点击播放/暂停">🔇</button>
+    <audio id="bgMusic" loop>
+        <source src="bgm.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="script.js"></script>
+</body>
+</html>

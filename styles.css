@@ -1,0 +1,732 @@
+/* ========== 全局设置 ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* 中国风配色 */
+    --red-primary: #c8102e;
+    --red-dark: #8b0000;
+    --gold: #d4af37;
+    --black: #1a1a1a;
+    --cream: #f5f5dc;
+    --white: #ffffff;
+    
+    /* 阴影 */
+    --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.15);
+    --shadow-hard: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+body {
+    font-family: 'Microsoft YaHei', '微软雅黑', sans-serif;
+    background: linear-gradient(135deg, var(--red-dark) 0%, var(--red-primary) 100%);
+    color: var(--cream);
+    overflow-x: hidden;
+    position: relative;
+    min-height: 100vh;
+}
+
+/* ========== Logo & 顶部 ========== */
+.top-right-logo {
+    position: fixed;
+    top: 20px; right: 20px;
+    z-index: 1000;
+    width: 200px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+.top-right-logo img { width: 100%; border-radius: 0; filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3)); }
+.top-right-logo:hover { transform: scale(1.05); }
+
+#plumBlossomCanvas {
+    position: fixed; top: 0; left: 0;
+    width: 100%; height: 100%;
+    pointer-events: none; z-index: 1; opacity: 0.6;
+}
+
+.container {
+    position: relative; z-index: 2;
+    max-width: 1200px; margin: 0 auto; padding: 20px;
+}
+
+/* 修改 styles.css 中的 .hero-section */
+/* 修改 styles.css */
+
+/* 修改 styles.css 中的 .hero-section */
+
+/* ========== 顶部导航栏样式改造 ========== */
+
+/* ========== 顶部英雄区 (纹理升级版) ========== */
+.hero-section {
+    text-align: center;
+    padding: 100px 40px; /* 增加内边距，给边框留位置 */
+    position: relative;
+    margin: 20px;        /* 关键：给外面的容器留点空隙 */
+    
+    /* 1. 核心：三层边框效果 (Gold - Red - Gold) */
+    /* 这一行代码实现了"双重金线"的高级感 */
+    box-shadow: 
+        0 0 0 4px var(--red-primary),  /* 内层红缝 */
+        0 0 0 6px var(--gold),         /* 内层细金线 */
+        0 0 0 12px var(--red-dark),    /* 中层宽红框 */
+        0 0 0 14px var(--gold),        /* 外层粗金线 */
+        0 10px 30px rgba(0,0,0,0.3);   /* 整体投影 */
+        
+    border-radius: 20px; /* 稍微圆润一点 */
+    
+    /* 2. 背景纹理：中式波点暗纹 */
+    /* 使用径向渐变模拟传统的"万字纹"或波点感 */
+    background-color: var(--red-primary);
+    background-image: 
+        radial-gradient(rgba(212, 175, 55, 0.2) 2px, transparent 2px),
+        radial-gradient(rgba(212, 175, 55, 0.2) 2px, transparent 2px);
+    background-size: 30px 30px;
+    background-position: 0 0, 15px 15px;
+    
+    overflow: hidden;
+}
+
+/* 保持原来的装饰线 */
+.decorative-border {
+    height: 2px;
+    background: linear-gradient(to right, transparent, var(--gold), transparent);
+    margin: 30px auto;
+    max-width: 400px; /* 稍微改短一点，更精致 */
+    position: relative;
+    opacity: 0.8;
+}
+
+/* 装饰线两端的小点缀 */
+.decorative-border::before,
+.decorative-border::after {
+    content: '❖'; /* 换成菱形符号更中式 */
+    position: absolute;
+    color: var(--gold);
+    font-size: 14px;
+    top: -8px;
+}
+.decorative-border::before { left: 0; }
+.decorative-border::after { right: 0; }
+
+/* 大标题保持不变 */
+.main-title {
+    font-size: 100px; /* 稍微调整大小适配框内 */
+    font-weight: bold;
+    color: var(--gold);
+    text-shadow: 0 0 20px rgba(212, 175, 55, 0.8), 4px 4px 8px rgba(0, 0, 0, 0.5);
+    letter-spacing: 20px;
+    margin: 20px 0;
+    animation: titleGlow 3s ease-in-out infinite;
+}
+
+/* 四个角的装饰 (可选，增加精致度) */
+/* ========== 顶部英雄区 (透明底纹理版) ========== */
+.hero-section {
+    text-align: center;
+    padding: 100px 40px; 
+    position: relative;
+    margin: 20px;
+    
+    /* 1. 边框调整 */
+    /* 注意：原来内层的 var(--red-primary) 和 var(--red-dark) 需要改成透明或金色，否则会有红边 */
+    
+    
+    /* 2. 背景调整：核心修改 */
+    /* 将纯红色背景改为透明，这样就能透出 body 的渐变背景 */
+    background-color: transparent; 
+    /* 或者使用一个极淡的黑色遮罩，增加文字对比度 */
+    /* background-color: rgba(0, 0, 0, 0.1); */
+
+    /* 3. 纹理调整 */
+    /* 金色波点保留，但为了在不同底色上都好看，建议稍微调低不透明度 */
+    background-image: 
+        radial-gradient(rgba(212, 175, 55, 0.25) 2px, transparent 2px),
+        radial-gradient(rgba(212, 175, 55, 0.25) 2px, transparent 2px);
+    background-size: 30px 30px;
+    background-position: 0 0, 15px 15px;
+    
+    overflow: hidden;
+}
+.title-char { display: inline-block; animation: float 3s ease-in-out infinite; }
+.title-char:nth-child(2) { animation-delay: 0.5s; }
+.subtitle { font-size: 24px; color: var(--cream); letter-spacing: 6px; opacity: 0.9; }
+
+@keyframes titleGlow {
+    0%, 100% { text-shadow: 0 0 20px rgba(212, 175, 55, 0.8); }
+    50% { text-shadow: 0 0 40px rgba(212, 175, 55, 1); }
+}
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+}
+
+.section-title {
+    text-align: center; font-size: 36px; color: var(--gold);
+    margin: 50px 0 40px; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+.title-decoration {
+    margin: 0 20px; font-size: 28px;
+    animation: rotate 4s linear infinite; display: inline-block;
+}
+@keyframes rotate { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+
+/* ========== NEW: 元宵百科翻转卡片 (整合版) ========== */
+.encyclopedia-section { padding: 20px 0; }
+.flip-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px; padding: 20px;
+}
+.flip-card-container {
+    background-color: transparent;
+    height: 400px; /* 固定高度确保翻转空间 */
+    perspective: 1000px; /* 3D透视 */
+    cursor: pointer;
+}
+.flip-card-inner {
+    position: relative; width: 100%; height: 100%;
+    text-align: center;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    box-shadow: var(--shadow-hard);
+    border-radius: 20px;
+}
+/* 鼠标悬停翻转 */
+.flip-card-container:hover .flip-card-inner { transform: rotateY(180deg); }
+
+.flip-card-front, .flip-card-back {
+    position: absolute; width: 100%; height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+    border-radius: 20px;
+    padding: 30px;
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+    border: 2px solid var(--gold);
+}
+
+/* 卡片正面样式 */
+.flip-card-front {
+    /* 旧代码：background: linear-gradient(145deg, #2a1a1a, #1a0f0f); */
+    
+    /* ✅ 新代码：改为半透明深红，不再死黑 */
+    background: linear-gradient(145deg, rgba(80, 20, 20, 0.9), rgba(40, 10, 10, 0.95));
+    
+    color: var(--gold);
+}
+.card-icon-lg { font-size: 80px; margin-bottom: 20px; }
+.flip-card-front h3 { font-size: 32px; margin-bottom: 10px; }
+.flip-card-front p { color: var(--cream); opacity: 0.7; font-size: 14px; }
+
+/* 卡片背面样式 */
+.flip-card-back {
+    background: linear-gradient(145deg, #fffcf5, #f0e6d2);
+    color: var(--black);
+    transform: rotateY(180deg); /* 初始背面朝后 */
+    text-align: left;
+    align-items: flex-start; /* 内容左对齐 */
+}
+.flip-card-back h3 {
+    color: var(--red-dark); width: 100%; text-align: center;
+    border-bottom: 2px dashed var(--gold);
+    padding-bottom: 10px; margin-bottom: 20px;
+}
+
+/* 列表样式优化 */
+.detail-list, .process-steps, .culture-items { width: 100%; font-size: 15px; }
+.detail-list li {
+    list-style: none; margin-bottom: 12px;
+    display: flex; align-items: center;
+}
+.dot { width: 12px; height: 12px; border-radius: 50%; display: inline-block; margin-right: 10px; border: 1px solid #999;}
+.dot.black { background: #333; }
+.dot.peanut { background: #d4a574; }
+.dot.red { background: #8b0000; }
+.dot.pink { background: #ffb3c1; }
+
+.p-step {
+    background: rgba(255,255,255,0.6); padding: 8px; margin-bottom: 8px;
+    border-radius: 8px; display: flex; align-items: center;
+}
+.step-num {
+    background: var(--red-primary); color: white;
+    width: 24px; height: 24px; border-radius: 50%;
+    text-align: center; line-height: 24px; font-size: 12px; margin-right: 10px; flex-shrink: 0;
+}
+.c-item { margin-bottom: 15px; }
+.c-item strong { color: var(--red-dark); display: block; margin-bottom: 4px; }
+.c-item p { font-size: 13px; color: #666; margin: 0; }
+
+/* ========== 互动体验区 ========== */
+.game-section { padding: 40px 0; }
+.game-selection-menu {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px; max-width: 900px; margin: 0 auto; padding: 20px;
+}
+/* ========== 互动体验卡片 (节日习俗/求灵签) - 优化版 ========== */
+.interactive-card {
+    /* ✅ 修改核心：背景改为半透明深红，不再是死黑 */
+    background: linear-gradient(145deg, rgba(80, 20, 20, 0.8), rgba(60, 10, 10, 0.9));
+    
+    border: 2px solid var(--gold); 
+    border-radius: 20px; 
+    padding: 40px 20px;
+    text-align: center; 
+    cursor: pointer; 
+    position: relative; 
+    overflow: hidden;
+    transition: all 0.3s;
+
+    /* ✅ 新增：微弱的红色内发光，增加通透感，消除沉闷 */
+    box-shadow: inset 0 0 20px rgba(255, 0, 0, 0.1);
+}
+
+.interactive-card:hover {
+    transform: translateY(-10px); 
+    /* 悬停时增加阴影层次 */
+    box-shadow: 0 15px 40px rgba(212, 175, 55, 0.3), inset 0 0 30px rgba(255, 0, 0, 0.2);
+    border-color: #fff;
+}
+
+/* 下面的保持不变 */
+.card-icon { font-size: 60px; margin-bottom: 20px; transition: transform 0.3s; }
+.interactive-card:hover .card-icon { transform: scale(1.2) rotate(10deg); }
+
+.interactive-card h3 { color: var(--gold); font-size: 24px; margin-bottom: 10px; }
+.interactive-card p { color: var(--cream); opacity: 0.8; margin-bottom: 25px; font-size: 14px; }
+
+.play-tag {
+    display: inline-block; padding: 8px 24px; border: 1px solid var(--gold);
+    border-radius: 50px; color: var(--gold); font-size: 14px; transition: all 0.3s;
+}
+.interactive-card:hover .play-tag { background: var(--gold); color: var(--black); font-weight: bold; }
+
+/* 习俗科普详情 */
+.hidden { display: none !important; opacity: 0; }
+.game-container { animation: fadeIn 0.5s ease; max-width: 1000px; margin: 0 auto; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+.back-menu-btn {
+    background: none; border: none; color: var(--cream); font-size: 16px;
+    cursor: pointer; margin-bottom: 20px; padding: 10px;
+    display: flex; align-items: center; gap: 5px; transition: color 0.3s;
+}
+.back-menu-btn:hover { color: var(--gold); }
+
+.customs-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px; padding: 20px;
+}
+.custom-card {
+    background: rgba(0,0,0,0.3); border: 1px solid rgba(212, 175, 55, 0.3);
+    border-radius: 15px; padding: 25px; text-align: left; transition: transform 0.3s;
+}
+.custom-card:hover {
+    transform: translateY(-5px); background: rgba(0,0,0,0.5); border-color: var(--gold);
+}
+.custom-icon { font-size: 36px; margin-bottom: 15px; }
+.custom-card h3 { color: var(--gold); margin-bottom: 10px; font-size: 18px; }
+.custom-card p { color: var(--cream); font-size: 14px; line-height: 1.6; opacity: 0.9; }
+
+/* ========== 弹窗样式 ========== */
+.modal-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(5px);
+    z-index: 2000; display: flex; justify-content: center; align-items: center;
+    opacity: 0; pointer-events: none; transition: opacity 0.4s ease;
+}
+.modal-overlay.active { opacity: 1; pointer-events: all; }
+.fortune-card {
+    background: linear-gradient(135deg, #fffcf5, #f0e6d2);
+    width: 90%; max-width: 400px; border-radius: 20px; border: 4px solid var(--gold);
+    padding: 30px; text-align: center; transform: translateY(50px) scale(0.9);
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5); position: relative;
+}
+.modal-overlay.active .fortune-card { transform: translateY(0) scale(1); }
+
+/* 关闭动画效果类 (用于收下祝福时) */
+.modal-overlay.closing .fortune-card {
+    transform: translateY(-100px) scale(0.5); opacity: 0;
+}
+
+.close-modal {
+    position: absolute; top: 10px; right: 15px; font-size: 30px;
+    background: none; border: none; color: var(--black); cursor: pointer; opacity: 0.5;
+}
+.close-modal:hover { opacity: 1; }
+.fortune-decoration { font-size: 48px; margin-bottom: 10px; }
+.fortune-title { color: var(--red-dark); font-size: 24px; margin-bottom: 20px; font-weight: bold; }
+.fortune-result {
+    min-height: 120px; display: flex; justify-content: center; align-items: center;
+    margin: 20px 0; border: 2px dashed var(--gold); border-radius: 10px;
+    background: rgba(255,255,255,0.5);
+}
+.fortune-word {
+    font-size: 48px; font-weight: bold; color: var(--red-primary);
+    animation: stampIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+@keyframes stampIn { 0% { opacity: 0; transform: scale(3); } 100% { opacity: 1; transform: scale(1); } }
+.fortune-desc { color: #666; margin-bottom: 25px; line-height: 1.6; }
+.draw-action-btn {
+    background: linear-gradient(90deg, var(--red-dark), var(--red-primary));
+    color: white; border: none; padding: 12px 40px; font-size: 18px;
+    border-radius: 50px; cursor: pointer; box-shadow: 0 5px 15px rgba(200, 16, 46, 0.4);
+    transition: all 0.3s;
+}
+.draw-action-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(200, 16, 46, 0.6); }
+.draw-action-btn:disabled { background: #ccc; cursor: not-allowed; transform: none; box-shadow: none; }
+
+/* ========== 页脚 & 音乐 ========== */
+.footer {
+    text-align: center; padding: 40px 20px; margin-top: 60px;
+    border-top: 2px solid var(--gold); position: relative;
+}
+.wiki-link {
+    color: var(--gold); text-decoration: none; border-bottom: 1px dashed var(--gold);
+    font-size: 14px; transition: all 0.3s;
+}
+.wiki-link:hover { color: var(--cream); border-bottom-style: solid; }
+.copyright { font-size: 12px; opacity: 0.6; margin-top: 10px; }
+
+.music-toggle {
+    position: fixed; bottom: 30px; right: 30px; width: 60px; height: 60px;
+    border-radius: 50%; background: linear-gradient(135deg, var(--gold), #b8941f);
+    border: 3px solid var(--cream); font-size: 28px; cursor: pointer;
+    box-shadow: var(--shadow-hard); z-index: 1000; transition: all 0.3s;
+    display: flex; justify-content: center; align-items: center;
+}
+.music-toggle:hover { transform: scale(1.1); box-shadow: 0 0 20px var(--gold); }
+.music-toggle:active { transform: scale(0.9); }
+
+/* 响应式调整 */
+@media (max-width: 768px) {
+    .main-title { font-size: 60px; }
+    .flip-grid, .game-selection-menu { grid-template-columns: 1fr; }
+    .top-right-logo { width: 80px; top: 10px; right: 10px; }
+    .flip-card-container { height: 350px; } /* 手机上卡片稍微矮一点 */
+}
+
+/* ==================== 南北之争样式 ==================== */
+.ns-comparison-section { padding: 40px 20px; }
+.vs-container {
+    display: flex; justify-content: center; align-items: stretch;
+    gap: 40px; max-width: 1000px; margin: 0 auto; position: relative;
+}
+.vs-card {
+    flex: 1; background: rgba(26, 26, 26, 0.6);
+    border: 2px solid var(--gold); border-radius: 20px;
+    padding: 30px; text-align: center; position: relative;
+    transition: transform 0.3s;
+}
+.vs-card:hover { transform: translateY(-10px); background: rgba(26, 26, 26, 0.8); }
+
+/* 北方特色 */
+.vs-card.north { border-color: #a8d8ea; box-shadow: 0 0 20px rgba(168, 216, 234, 0.2); }
+.vs-card.north .vs-tag { background: #a8d8ea; color: #1a1a1a; }
+.vs-card.north .vs-icon { text-shadow: 0 0 10px #a8d8ea; }
+
+/* 南方特色 */
+.vs-card.south { border-color: #ffb3c1; box-shadow: 0 0 20px rgba(255, 179, 193, 0.2); }
+.vs-card.south .vs-tag { background: #ffb3c1; color: #1a1a1a; }
+.vs-card.south .vs-icon { text-shadow: 0 0 10px #ffb3c1; }
+
+.vs-tag {
+    position: absolute; top: -15px; left: 50%; transform: translateX(-50%);
+    padding: 5px 20px; border-radius: 20px; font-weight: bold; font-size: 14px;
+}
+.vs-icon { font-size: 60px; margin: 20px 0; }
+.vs-card h3 { font-size: 28px; margin-bottom: 5px; color: var(--white); }
+.vs-desc { color: var(--cream); opacity: 0.8; font-style: italic; margin-bottom: 20px; }
+.vs-features { text-align: left; list-style: none; padding: 0 10px; }
+.vs-features li { margin-bottom: 10px; font-size: 14px; color: #ddd; border-bottom: 1px dashed rgba(255,255,255,0.1); padding-bottom: 5px;}
+.vs-features strong { color: var(--gold); margin-right: 5px; }
+
+/* VS 中间圆圈 */
+.vs-center {
+    display: flex; align-items: center; justify-content: center;
+    position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%);
+    z-index: 10;
+}
+.vs-circle {
+    width: 60px; height: 60px; background: var(--red-primary);
+    border: 4px solid var(--gold); border-radius: 50%;
+    color: var(--gold); font-weight: 900; font-size: 24px;
+    line-height: 52px; text-align: center; font-style: italic;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+/* ==================== 历史时间轴样式 ==================== */
+.timeline {
+    position: relative; max-width: 800px; margin: 0 auto; padding: 40px 0;
+}
+/* 中间线 */
+.timeline::after {
+    content: ''; position: absolute; width: 4px; background-color: var(--gold);
+    top: 0; bottom: 0; left: 50%; margin-left: -2px; border-radius: 2px;
+    box-shadow: 0 0 10px var(--gold);
+}
+.timeline-item {
+    padding: 10px 40px; position: relative; background-color: inherit; width: 50%;
+}
+.timeline-item::after {
+    content: '✦'; font-size: 20px; color: var(--red-primary);
+    position: absolute; width: 30px; height: 30px;
+    right: -17px; background-color: var(--cream);
+    border: 4px solid var(--gold); top: 20px; border-radius: 50%;
+    z-index: 1; text-align: center; line-height: 22px;
+}
+.left { left: 0; }
+.right { left: 50%; }
+.left::before {
+    content: " "; height: 0; position: absolute; top: 28px; width: 0; z-index: 1;
+    right: 30px; border: medium solid rgba(255,255,255,0.1);
+    border-width: 10px 0 10px 10px; border-color: transparent transparent transparent rgba(255,255,255,0.1);
+}
+.right::before {
+    content: " "; height: 0; position: absolute; top: 28px; width: 0; z-index: 1;
+    left: 30px; border: medium solid rgba(255,255,255,0.1);
+    border-width: 10px 10px 10px 0; border-color: transparent rgba(255,255,255,0.1) transparent transparent;
+}
+.right::after { left: -16px; }
+.timeline-content {
+    padding: 20px; background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px; border: 1px solid rgba(212, 175, 55, 0.3);
+    backdrop-filter: blur(5px);
+}
+.timeline-content h3 { color: var(--gold); margin-bottom: 10px; }
+.timeline-content p { font-size: 14px; line-height: 1.6; color: #ddd; margin-bottom: 10px; }
+.time-tag {
+    display: inline-block; padding: 4px 10px; background: var(--red-dark);
+    color: var(--gold); border-radius: 4px; font-size: 12px;
+}
+
+/* ==================== 诗词雅韵样式 ==================== */
+.poetry-grid {
+    display: flex; justify-content: center; gap: 40px; flex-wrap: wrap;
+}
+.poem-card {
+    background: #f5f5dc; /* 宣纸色 */
+    color: #333;
+    padding: 40px 30px;
+    width: 300px; min-height: 400px;
+    writing-mode: vertical-rl; /* 核心：文字竖排 */
+    border-radius: 4px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    position: relative;
+    border-top: 10px solid var(--red-dark);
+    border-bottom: 10px solid var(--red-dark);
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23d4af37' fill-opacity='0.05' fill-rule='evenodd'/%3E%3C/svg%3E");
+    transition: transform 0.3s;
+}
+.poem-card:hover { transform: translateY(-10px); }
+.poem-body {
+    font-size: 20px; line-height: 2; font-family: "KaiTi", "STKaiti", serif; /* 楷体 */
+    height: 300px; letter-spacing: 4px;
+}
+.poem-footer {
+    margin-top: 20px; font-size: 14px; color: #8b0000;
+    display: flex; flex-direction: column; gap: 10px; align-items: center;
+}
+
+/* ==================== 手机端适配更新 ==================== */
+@media (max-width: 768px) {
+    /* 南北之争改为上下排列 */
+    .vs-container { flex-direction: column; gap: 30px; }
+    .vs-center { position: relative; left: auto; top: auto; transform: none; margin: -15px auto; }
+    
+    /* 时间轴改为单侧 */
+    .timeline::after { left: 31px; }
+    .timeline-item { width: 100%; padding-left: 70px; padding-right: 25px; }
+    .timeline-item::before { left: 60px; border: medium solid white; border-width: 10px 10px 10px 0; border-color: transparent white transparent transparent; }
+    .left::after, .right::after { left: 15px; }
+    .right { left: 0%; }
+    
+    /* 诗词改为横排（手机竖排阅读体验不好） */
+    .poem-card { writing-mode: horizontal-tb; width: 100%; min-height: auto; padding: 30px; }
+    .poem-body { height: auto; text-align: center; }
+}
+/* ==================== 历史文脉更新 (适配更多内容) ==================== */
+/* 调整时间轴间距，防止文字太多挤在一起 */
+.timeline-item { padding-bottom: 30px; }
+.timeline-content h3 { font-size: 20px; border-bottom: 1px dashed rgba(212, 175, 55, 0.3); padding-bottom: 8px; }
+.timeline-content p { margin-bottom: 15px; text-align: justify; } /* 两端对齐更整齐 */
+
+/* ==================== 诗词雅韵 (翻转特效) ==================== */
+.poetry-grid {
+    display: flex; justify-content: center; gap: 60px; flex-wrap: wrap; perspective: 1000px;
+}
+
+/* 1. 翻转容器 */
+.poem-flip-container {
+    width: 320px; height: 480px; cursor: pointer;
+    position: relative;
+}
+
+/* 2. 内部核心层 (处理3D空间) */
+.poem-flip-inner {
+    position: relative; width: 100%; height: 100%;
+    text-align: center;
+    transition: transform 0.8s cubic-bezier(0.4, 0.2, 0.2, 1); /* 优雅的翻转动画 */
+    transform-style: preserve-3d;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.4);
+    border-radius: 8px;
+}
+
+/* 鼠标悬停时翻转 */
+.poem-flip-container:hover .poem-flip-inner {
+    transform: rotateY(180deg);
+}
+
+/* 3. 正面和背面公共样式 */
+.poem-front, .poem-back {
+    position: absolute; width: 100%; height: 100%;
+    -webkit-backface-visibility: hidden; /* 关键：隐藏背面 */
+    backface-visibility: hidden;
+    border-radius: 8px; overflow: hidden;
+    border: 2px solid var(--gold);
+}
+
+/* === 正面：文字 (保持之前的古风设计) === */
+.poem-front {
+    background: #f5f5dc; /* 宣纸色 */
+    color: #333;
+    padding: 40px 20px;
+    display: flex; flex-direction: column; justify-content: space-between;
+    background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7z' fill='%23d4af37' fill-opacity='0.1' fill-rule='evenodd'/%3E%3C/svg%3E");
+}
+
+.poem-body {
+    flex-grow: 1; display: flex; flex-direction: row-reverse; /* 从右向左排 */
+    justify-content: center; gap: 15px;
+    font-family: "KaiTi", "STKaiti", serif; 
+    font-size: 22px; line-height: 1.5;
+}
+.poem-body p { writing-mode: vertical-rl; margin: 0; letter-spacing: 4px; }
+.poem-footer { border-top: 1px solid #8b0000; padding-top: 15px; color: #8b0000; }
+
+/* === 背面：图片 (新加的) === */
+.poem-back {
+    background: #1a0f0f;
+    transform: rotateY(180deg); /* 初始状态是翻过去的 */
+    display: flex; align-items: center; justify-content: center;
+}
+
+.poem-back img {
+    width: 100%; height: 100%; object-fit: cover; /* 填满容器 */
+    filter: brightness(0.7); /* 稍微压暗一点，突出上面的文字 */
+    transition: filter 0.5s;
+}
+.poem-flip-container:hover .poem-back img { filter: brightness(0.5); }
+
+.back-overlay {
+    position: absolute; width: 80%;
+    color: var(--gold); text-align: center;
+    transform: translateZ(50px); /* 文字悬浮效果 */
+    text-shadow: 0 2px 10px rgba(0,0,0,0.8);
+}
+.back-overlay h3 { font-size: 28px; margin-bottom: 10px; font-weight: bold; border-bottom: 1px solid var(--gold); display: inline-block; padding-bottom: 5px;}
+.back-overlay p { font-size: 16px; font-family: "KaiTi", serif; letter-spacing: 2px;}
+
+/* 手机适配 */
+@media (max-width: 768px) {
+    .poetry-grid { gap: 30px; }
+    .poem-flip-container { width: 100%; max-width: 320px; height: 400px; }
+    .poem-body { font-size: 18px; }
+}
+/* ========== 修正：南北图标 (CSS 绘图版) ========== */
+.vs-icon-box {
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* 1. 北方：竹筛子 (摇元宵) */
+.icon-sieve {
+    width: 80px; height: 80px;
+    border: 4px solid #d4a574; /* 竹子颜色 */
+    border-radius: 50%;
+    position: relative;
+    background: radial-gradient(transparent 90%, #d4a574 90%), /* 模拟网格 */
+                linear-gradient(90deg, transparent 90%, rgba(212, 165, 116, 0.3) 90%),
+                linear-gradient(0deg, transparent 90%, rgba(212, 165, 116, 0.3) 90%);
+    background-size: 10px 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    animation: shake 2s ease-in-out infinite; /* 摇动动画 */
+}
+
+/* 筛子里面的小白球 (模拟元宵) */
+.sieve-ball {
+    position: absolute; width: 16px; height: 16px;
+    background: #fff; border-radius: 50%;
+    top: 40%; left: 30%;
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+.sieve-ball.two {
+    top: 50%; left: 55%;
+}
+
+@keyframes shake {
+    0%, 100% { transform: rotate(-5deg); }
+    50% { transform: rotate(5deg); }
+}
+
+/* 2. 南方：汤匙 (包汤圆) */
+.icon-spoon {
+    width: 100px; height: 80px;
+    position: relative;
+    display: flex; justify-content: center; align-items: center;
+    transform: rotate(-15deg);
+}
+
+.spoon-handle {
+    width: 60px; height: 12px;
+    background: #e0e0e0;
+    position: absolute; right: 0; top: 20px;
+    border-radius: 0 10px 10px 0;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+}
+
+.spoon-bowl {
+    width: 50px; height: 40px;
+    background: #f5f5f5;
+    border-radius: 20px 20px 50px 50px; /* 汤匙形状 */
+    position: absolute; left: 10px; top: 10px;
+    z-index: 2;
+    box-shadow: inset -2px -2px 5px rgba(0,0,0,0.1), 2px 5px 10px rgba(0,0,0,0.2);
+    display: flex; justify-content: center; align-items: center;
+    overflow: hidden;
+}
+
+/* 汤匙里的汤圆 */
+.spoon-tangyuan {
+    width: 24px; height: 24px;
+    background: #fff;
+    border-radius: 50%;
+    box-shadow: inset -2px -2px 5px rgba(0,0,0,0.1);
+    transform: translateY(2px);
+}
+
+/* ========== 新增：诗词翻转提示 ========== */
+.flip-hint {
+    position: absolute;
+    bottom: 15px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    color: #8b0000;
+    font-size: 14px;
+    font-weight: bold;
+    opacity: 0.6;
+    letter-spacing: 1px;
+    animation: hintPulse 2s infinite;
+    pointer-events: none; /* 防止遮挡点击 */
+}
+
+@keyframes hintPulse {
+    0%, 100% { opacity: 0.4; transform: translateY(0); }
+    50% { opacity: 1; transform: translateY(-3px); }
+}
